@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <script type="text/javascript" src="jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="lightslider.js"></script> -->
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script> -->
+
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="./responsive.css">
+  <style>
+    .mySlides {
+      display: none
+    }
+
+    img {
+      vertical-align: middle;
+
+    }
+
+    .slideshow-container {
+      max-width: 900px;
+      position: relative;
+      margin: 20px 120px;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      /* top: 50%; */
+      width: auto;
+      padding: 16px;
+      margin-top: -300px;
+      margin-left: 20px;
+      color: brown;
+      font-weight: bold;
+      font-size: 50px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #ffffff;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: black;
+      font-size: 50px;
+      padding: 10px 400px;
+
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #999999;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: black;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+  <title>Pokemon</title>
+
+  <!-- <script>
+    $(document).ready(function () {
+      $('#autoWidth').lightSlider({
+        autoWidth: true,
+        loop: true,
+        onSliderLoad: function () {
+          $('#autoWidth').removeClass('cS-hidden');
+        }
+      });
+    });
+  </script> -->
+
+</head>
+
+
+<!-- <script>
+  function myFunction()
+  {
+    var x = document.getElementById("navigation-header");
+    if(x.style.display === "none")
+    {
+      x.style.display = "block";
+        
+      }
+    else
+    {
+      x.style.display = "none";
+    }
+  }
+</script> -->
+
+<body>
+
+  <div class="header">
+    <div class="first-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemon-79x45.png" alt="site_slug"
+        class="gus-bounce">
+    </div>
+    <div class="second-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemoncenter-79x45.png"
+        alt="site_slug" class="gus-bounce">
+
+      <!-- <div class="vl"></div> -->
+    </div>
+
+    <div class="third-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-tcgo-79x45.png" alt="site_slug"
+        class="gus-bounce">
+
+      <!-- <div class="vl"></div> -->
+    </div>
+    <div class="right-arrow">
+      &#10095
+    </div>
+    <div class="fourth-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/promotions/legends-arceus-176x50-us.jpg">
+    </div>
+    <div class="fifth-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/promotions/swsh09-gus-175-en.jpg">
+
+    </div>
+    <div class="sixth-box">
+      <img src="https://assets.pokemon.com/assets/cms2/img/misc/gus/promotions/unite-176x50.jpg">
+    </div>
+  </div>
+
+  <div class="navigation-header">
+    <div class="nav-first-box active">
+      <img src="/images/Asset 1.png" width="30px" height="30px">
+      <h3> Home</h3>
+    </div>
+
+    <a href="/pokedox.html">
+      <div class="nav-second-box">
+        <img src="./images/pokeball-16865-32x32.ico" width="50px" height="50px" style="color: grey;">
+        <h3> Pokédex</h3>
+      </div>
+    </a>
+    <a href="/Video Games apps.html">
+      <div class="nav-third-box">
+        <img src="./images/signe-g7eac9b1ff_640.png" alt="" width="30px" height="30px" style="color: grey;">
+        <h3> Video Games & <br> Apps</h3>
+      </div>
+    </a>
+
+
+    <a href="./slider/Trading card Game.html">
+      <div class="nav-fourth-box">
+        <img src="./images/PngItem_349244.png" alt="" width="30px" height="30px">
+        <h3> Trading Card Game</h3>
+      </div>
+    </a>
+
+    <a href="/pockemon TV.html">
+      <div class="nav-fifth-box">
+        <img src="./images/PngItem_1125914.png" alt="" width="30px" height="30px">
+        <h3> Pokemon TV</h3>
+      </div>
+    </a>
+    
+    <div class="nav-sixth-box">
+      <img
+        src="https://www.kindpng.com/picc/m/285-2850569_transparent-background-trophy-png-clipart-png-download-transparent.png"
+        width="30px" height="30px">
+      <h3> Polay! Pokemon <br> Events</h3>
+    </div>
+    <div class="nav-seventh-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqs4CxMSN6MlCcmCpnxzXd0HkHjUVILomt1Q&usqp=CAU"
+        width="30px" height="30px">
+      <h3> News</h3>
+    </div>
+  </div>
+
+  <div class="navbar-responsive-div">
+    <a href="javascript:void(0);" id="hamburger-image" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <div class="navbar-responsive-right-side">
+      <img class="avatar-icon-mobile"
+        src="https://assets.pokemon.com/static2/_ui/img/chrome/profile-navigation/profile-nav-signup.png"
+        alt="Log In / Sign Up">
+      <p>Log In</p>
+    </div>
+
+  </div>
+  <!-- <a href="javascript:void(0);" id="hamburger-image" onclick="myFunction()">
+    <i class="fa fa-bars"></i> -->
+
+
+
+
+
+  <div class="third-section">
+    <div class="third-section-left">
+      <div class="third-sec-left-1">
+        <img src="https://assets.pokemon.com/assets//cms2/img/attend-events/championship/2022-euic/2022-euic-169.jpg"
+          alt="">
+        <div class="third-sec-left-1-h-p">
+          <h3>Tune into Incredible Battles from the International Championships!</h3>
+          <p>Players will compete for incredible prizes and high Championship Point payouts <br> during the
+            2022 Pokémon Europe International Championships in Frankfurt, <br> Germany from April 22–24,
+            2022.</p>
+        </div>
+      </div>
+
+      <div class="third-sec-left-2">
+        <div class="third-sec-left-2-part-1">
+          <img
+            src="https://assets.pokemon.com/assets//cms2/img/attend-events/championship/2022-euic/tcg/2022-euic-power-rankings-tcg-169.jpg"
+            alt="">
+          <h3>The Pokémon TCG Europe <br> International <br> Championships Power <br> Rankings</h3>
+        </div>
+
+        <div class="third-sec-left-2-part-2">
+          <img
+            src="https://assets.pokemon.com/assets//cms2/img/attend-events/championship/2022-euic/vgc/2022-euic-preview-vgc-169.jpg"
+            alt="">
+          <h3> What to Watch for at the <br> 2022 VGC Europe <br> International <br> Championships</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="third-section-right">
+      <div class="third-sec-right-first-div">
+        <img
+          src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/strategy/legends-arceus/outbreaks/pokemon-legends-arceus-169-en.gif"
+          alt="">
+        <h3> Shiny Pokémon in <br> Massive Mass Outbreaks</h3>
+      </div>
+      <div class="third-sec-right-second-div">
+        <img src="https://assets.pokemon.com/assets//cms2/img/misc/_tiles/quiz/villains/villains-34.jpg" alt="">
+        <h3>Take The Villan's Quiz</h3>
+      </div>
+      <div class="third-sec-right-third-div">
+        <img
+          src="https://assets.pokemon.com/assets//cms2/img/attend-events/championship/2022-euic/pokken-tournament/2022-euic-preview-pokken-tournament-169.jpg"
+          alt="">
+        <h3>2022 <em>Pokkén Tournament <br> DX</em> Europe International <br> Championships Preview</h3>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="slider-heading">
+    <h3> <i class="fa fa-compass"></i> Featured Pokemon</h3>
+  </div>
+
+  <iframe src="./slider/responsive_product_slider.html" frameborder="0" width="100%" height="350px"></iframe>
+  <!-- slider start -->
+  <!-- img/batak.png -->
+
+
+
+  <!-- <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img src="https://static.toiimg.com/photo/68814397.cms">
+
+           <div class="text">London, Ebgland</div> 
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/07/darjeeling-rain-clouds-sunset.jpg">
+
+           <div class="text">Sunset in Romania</div> 
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img src="https://media.istockphoto.com/photos/kalam-valley-pakistan-picture-id1277791195">
+
+           <div class="text">New York, USA</div>
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img
+            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/67/88/93/swat-valley.jpg?w=900&h=600&s=1">
+
+          <div class="text">New York, USA</div> 
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"> 5 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img src="https://southasianvoices.org/wp-content/uploads/2020/08/Pangong_lake_-_Ladakh-scaled.jpg"
+            style="width:100%">
+
+           <div class="text">New York, USA</div>
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"> 6 / 7</div>
+      <div class="box">
+        <div class="slide-img">
+          <img src="https://www.thestatesman.com/wp-content/uploads/2019/05/indo-nepal.jpg" style="width:100%">
+
+           <div class="text">New York, USA</div> 
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"> 7 / 7 </div>
+      <div class="box">
+        <div class="slide-img">
+          <img
+            src="https://i.natgeofe.com/k/3a6c9b0e-f5db-41b2-a077-5c26bad60b5c/turkey-instanbul-cityscape.jpg?w=636&h=358"
+            style="width:100%">
+
+          <div class="overlay">
+            <a href="#" class="buy-btn">Explore More</a>
+          </div>
+        </div>
+
+        <div class="detail-box">
+          <div class="type">
+            <a href="#">Andman</a>
+          </div>
+          <a href="#" class="price">120</a>
+        </div>
+      </div>
+    </div>
+
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div> 
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+  </div>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+-->
+
+
+
+
+
+  <section class="slider">
+    <ul id="autoWidth" class="cs-hidden">
+
+      <!-- <li class="item-a"> -->
+      <!-- <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src=https://static.toiimg.com/photo/68814397.cms">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div> -->
+
+      <!-- <div class="detail-box">
+                <div class="type">
+                  <a href="#">Andman</a>
+                </div>
+                <a href="#" class="price">120</a>
+              </div>
+            </div>
+          </li> -->
+
+
+      <!-- <li class="item-a"> -->
+      <!-- <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://www.lostwithpurpose.com/wp-content/uploads/2018/05/DSC02425.jpg">
+
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+
+              </div> -->
+
+      <!-- <div class="detail-box">
+                <div class="type">
+                  <a href="#">Bhutan</a>
+                </div>
+                <a href="#" class="price">106</a>
+              </div>
+
+            </div>
+          </li> -->
+
+
+      <!-- <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/07/darjeeling-rain-clouds-sunset.jpg">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div>
+              <div class="detail-box">
+                <div class="type">
+                  <a href="#">Darjeeling</a>
+                </div>
+                <a href="#" class="price">223</a>
+              </div>
+            </div>
+          </li>
+
+
+          <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/67/88/93/swat-valley.jpg?w=900&h=600&s=1">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div>
+              <div class="detail-box">
+                <div class="type">
+                  <a href="#">Himanchal</a>
+                </div>
+                <a href="#" class="price">423</a>
+              </div>
+            </div>
+          </li>
+
+
+          <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://media.istockphoto.com/photos/kalam-valley-pakistan-picture-id1277791195">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div>
+              <div class="detail-box">
+                <div class="type">
+                  <a href="#">Kerala</a>
+                </div>
+                <a href="#" class="price">103</a>
+              </div>
+            </div>
+          </li>
+
+
+          <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://southasianvoices.org/wp-content/uploads/2020/08/Pangong_lake_-_Ladakh-scaled.jpg">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div>
+              <div class="detail-box">
+                <div class="type">
+                  <a href="#">Laddakh</a>
+                </div>
+                <a href="#" class="price">342</a>
+              </div>
+            </div>
+          </li>
+ -->
+
+      <!-- <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://i.natgeofe.com/k/3a6c9b0e-f5db-41b2-a077-5c26bad60b5c/turkey-instanbul-cityscape.jpg?w=636&h=358">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Buy Now</a>
+                </div>
+              </div>
+              <div class="detail-box">
+                <div class="type">
+                  <a href="#">Uttarakhand</a>
+                </div>
+                <a href="#" class="price">230</a>
+              </div>
+            </div>
+          </li> -->
+
+
+      <!-- <li class="item-a">
+            <div class="box">
+              <div class="slide-img">
+                <img alt="schauhan.in responsive product slider using html css and javascript"
+                  src="https://www.thestatesman.com/wp-content/uploads/2019/05/indo-nepal.jpg">
+                <div class="overlay">
+                  <a href="#" class="buy-btn">Explore More</a>
+                </div>
+              </div> -->
+
+      <!-- <div class="detail-box">
+                <div class="type">
+                  <a href="#">Nepal</a>
+                </div>
+                <a href="#" class="price">743</a>
+              </div>
+            </div>
+          </li>
+        </ul> -->
+  </section>
+
+  <div class="explore-pokemon">
+    <h3>Explore More Pokemon</h3>
+  </div>
+
+
+
+
+  <div class="second-last-section">
+    <div class="left">
+      <div class="left-1">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/strategy/go/tapu-bulu/pokemon-go-169.jpg"
+            alt="">
+        </div>
+        <div class="left-1-h2-p">
+
+          <h2> Tapu Bulu Pokemon GO <br> Rapid Battle Stretegy</h2>
+          <p>Learn how to catch and utilize this <br> bullish Grass- Fairy-type <br> Legendary Pokemon.</p>
+        </div>
+      </div>
+
+      <div class="left-2">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/pokemon-masters/04142022/pokemon-masters-ex-169.jpg"
+            alt="">
+        </div>
+        <div class="left-2-h2-p">
+          <h2> Ingo (Special Costume) <br> & Accelgor Stop by Pasio <br> for a Spot of Tea</h2>
+          <p> Pokemon Masters EX's Curious Tea <br> Party costume event continues <br> with the arrival of
+            this
+            new sync <br> pair.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <div class="center-1">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/strategy/legends-arceus/complete-the-pokedex/pokemon-legends-arceus-169-en.gif"
+            alt="">
+        </div>
+        <div class="center_1_h2_p">
+
+          <h2> Top Tips to Help Complete <br> Your Hisui Region <br> Pokedex</h2>
+          <p>If your <em>Pokémon Legends: Arceus</em> Pokédex is missing some entries, this guide will help
+            you find those elusive Pokémon.</p>
+
+        </div>
+      </div>
+      <h2 class="section-title">What's New This <br> Week</h2>
+      <div class="center-2">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/pokemon-unite/04082022/pokemon-unite-169.jpg"
+            alt="">
+        </div>
+        <div class="center_2_h2_p">
+          <h2>Azumarill Offers Bubble <br> Trouble in Pokémon UNITE</h2>
+          <p>Gain the advantage in battle with a <br> whirlpool-wielding Melee All-Rounder.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="right-1">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/strategy/unite/prep/pokemon-unite-169.jpg"
+            alt="">
+        </div>
+        <div class="right_1_h2_p">
+
+          <h2>What It Takes to Win in <br> Pokémon UNITE</h2>
+          <p>Hear from one of the top Pokémon <br> UNITE players about his team’s <br> preparations for
+            competitive matches.</p>
+        </div>
+      </div>
+
+      <div class="right-2">
+        <div class="left-1-image">
+          <img class="second-section-images"
+            src="https://assets.pokemon.com/assets//cms2/img/video-games/_tiles/pokemon-sword-shield/ranked-battles/2022/april-ranked-battle-season-169-en.jpg"
+            alt="">
+        </div>
+        <div class="right_2_h2_p">
+          <h2>Play in the Ranked Battles April 2022 Season (Season 29) Now</h2>
+          <p>Compete against <em>Pokémon Sword </em> <br> and <em>Pokémon Shield</em> players from <br>
+            around
+            the world to earn in-game <br> rewards during the April season.</p>
+        </div>
+      </div>
+
+      <div class="right-3">
+        <div class="right-3-part-1">
+          <h2>View all news</h2>
+        </div>
+        <div class="right-3-part-2">
+          <p>Keep up with all the latest developments!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Absolute Images -->
+  <div class="absolute-images">
+    <div class="login-image">
+      <img class="avatar-icon"
+        src="https://assets.pokemon.com/static2/_ui/img/chrome/profile-navigation/profile-nav-signup.png" alt="Sign In">
+      <div class="login-image-text">
+        Log In
+      </div>
+    </div>
+
+    <div class="search-image">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+
+
+
+
+  <footer>
+    <div class="color-div">
+      <!-- <span class="span-color-div"></span> -->
+    </div>
+    <div class="Footer-Full-Container">
+      <div class="footer-frist-part">
+
+        <h1>The Pokemon Company</h1>
+        <ul>
+          <li> What's New?</li>
+          <li> Pokemon Parent Guide</li>
+          <li> Customer Services</li>
+          <li> About Our Company</li>
+          <li> Pokemon careers</li>
+          <li> Select a Country/Religion</li>
+          <li> Pokemon Press Site</li>
+        </ul>
+      </div>
+
+      <p class="footer-vertical-line"></p>
+
+      <div class="footer-second-part">
+        <i class="fa-brands fa-facebook-square"></i>
+        <i class="fa-brands fa-youtube-square"></i>
+        <i class="fa-brands fa-twitter-square"></i>
+        <i class="fa-brands fa-instagram-square"></i>
+        <i class="fa-brands fa-pinterest-square"></i>
+      </div>
+
+      <p class="footer-vertical-line"></p>
+
+      <div class="footer-third-part">
+        <div class="footer-image">
+          <img
+            src="https://assets.pokemon.com/static2/_ui/img/footer/thepokemoncompanyinternational-seal-1596150491.png"
+            alt="">
+        </div>
+        <div class="last-section-ul-footer">
+          <ul>
+            <li>Terms of use</li>
+            <li>Privacy Notes</li>
+            <li>Cookie Page</li>
+            <li>Legal info</li>
+            <li>Security</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright-section">
+        &copy2022 Pockemon &copy 1995-2022 <br>
+        &copy Karachi, Pakistan.
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
